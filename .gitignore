@@ -1,2 +1,27 @@
-node_modules
+
+# Ignore node_modules
+node_modules/
+
+# Ignore environment variables
 .env
+
+# Ignore ESLint configuration
+.eslintrc
+
+# Ignore build files
+dist/
+build/
+
+# Ignore logs
+logs/
+
+# Ignore local development databases
+*.local
+
+# Ignore socket.io files
+.socket.io.session
+
+# Ignore mongoose files
+*.log
+*.db
+*.lock

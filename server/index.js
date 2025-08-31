@@ -6,10 +6,14 @@ import chatRoutes from "./src/routes/chat.route.js";
 import { connectDB } from "./src/lib/db.js";
 import { errorMiddleware } from "./src/middleware/error.middleware.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 dotenv.config();
 const app = express();
 connectDB();
-
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/api/auth', authRoute);
